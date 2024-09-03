@@ -1,0 +1,15 @@
+Package: ssio
+Title: Input/Output Support for Stock Synthesis 3.30 and r4ss
+Version: 0.0.1
+Authors@R: 
+    c(person(given = c("Luke", "A."),
+             family = "Rogers",
+             role = c("aut", "cre"),
+             email = "luke.rogers@dfo-mpo.gc.ca",
+             comment = c(ORCID = "0000-0003-3843-064X"))
+    )
+Description: Input/Output Support for Stock Synthesis 3.30 and r4ss.
+License: GPL (>= 3)
+Encoding: UTF-8
+Roxygen: list(markdown = TRUE)
+RoxygenNote: 7.3.2
