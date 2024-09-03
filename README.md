@@ -8,6 +8,6 @@ Input/Output Support for Stock Synthesis 3.30 and r4ss
 
 ## Installation
 
-```{r}
+```r
 remotes::install_github("luke-a-rogers/ssio")
 ```
