@@ -3,7 +3,6 @@
 #' @param n [integer()]
 #' @param file [character()]
 #' @param value [numeric()]
-#' @param name [character()]
 #' @param append [logical()]
 #'
 #' @return [character()]
@@ -17,11 +16,11 @@
 write_terminal_line <- function (n,
 																 file,
 																 value = -9999,
-																 name = "terminal line",
 																 append = TRUE) {
 
 	# Define ---------------------------------------------------------------------
 
+	name <- c("terminal line")
 	x <- paste(value, paste(rep(0, n-1), collapse = " "), "#", name, sep = c(" "))
 
 	# Write ----------------------------------------------------------------------
