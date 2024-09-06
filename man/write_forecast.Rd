@@ -6,14 +6,14 @@
 \usage{
 write_forecast(
   file = "forecast.ss",
-  option_reference_points = 1,
-  option_msy_method = 2,
+  reference_point_option = 1,
+  msy_method = 2,
   spr_target = 0.4,
   relative_biomass_target = 0.4,
-  years_reference_points = rep(0, 10),
+  reference_point_years = rep(0, 10),
   relative_fishing_basis = 1,
-  option_forecast = 0,
-  years_forecast = 1,
+  forecast_option = 0,
+  forecast_years = 1,
   fishing_multiplier = 1,
   control_rule_method = 0
 )
@@ -21,21 +21,21 @@ write_forecast(
 \arguments{
 \item{file}{\code{\link[=character]{character()}}}
 
-\item{option_reference_points}{\code{\link[=integer]{integer()}}}
+\item{reference_point_option}{\code{\link[=integer]{integer()}}}
 
-\item{option_msy_method}{\code{\link[=integer]{integer()}}}
+\item{msy_method}{\code{\link[=integer]{integer()}}}
 
 \item{spr_target}{\code{\link[=numeric]{numeric()}}}
 
 \item{relative_biomass_target}{\code{\link[=numeric]{numeric()}}}
 
-\item{years_reference_points}{\code{\link[=integer]{integer()}} \code{\link[=vector]{vector()}}}
+\item{reference_point_years}{\code{\link[=integer]{integer()}} \code{\link[=vector]{vector()}}}
 
 \item{relative_fishing_basis}{\code{\link[=integer]{integer()}}}
 
-\item{option_forecast}{\code{\link[=integer]{integer()}}}
+\item{forecast_option}{\code{\link[=integer]{integer()}}}
 
-\item{years_forecast}{\code{\link[=integer]{integer()}}}
+\item{forecast_years}{\code{\link[=integer]{integer()}}}
 
 \item{fishing_multiplier}{\code{\link[=numeric]{numeric()}}}
 

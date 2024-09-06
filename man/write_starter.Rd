@@ -10,23 +10,23 @@ write_starter(
   file_name_control = "control.ss",
   use_ss3_dot_par = 0,
   progress_detail = 0,
-  option_age_report = 1,
-  option_custom_report = 0,
+  age_report_option = 1,
+  custom_report_option = 0,
   parameter_trace = 0,
-  option_cumulative_report = 2,
+  cumulative_report_option = 2,
   use_full_priors = 0,
   use_soft_bounds = 1,
-  option_data_output = 1,
+  data_output_option = 1,
   phase_maximum = 10,
   mcmc_burn = 250,
   mcmc_thin = 5,
-  option_jitter = 0,
-  year_min_sd_report = -1,
-  year_max_sd_report = -1,
-  years_extra_sd_report = 0,
+  jitter_option = 0,
+  sd_report_year_min = -1,
+  sd_report_year_max = -1,
+  sd_report_years_extra = 0,
   convergence_value = 1e-04,
   year_retrospective = 0,
-  option_age_summary = 1,
+  age_summary_option = 1,
   depletion_basis = 1,
   depletion_denom = 1,
   spr_basis = 0,
@@ -49,19 +49,19 @@ write_starter(
 
 \item{progress_detail}{\code{\link[=integer]{integer()}}}
 
-\item{option_age_report}{\code{\link[=integer]{integer()}}}
+\item{age_report_option}{\code{\link[=integer]{integer()}}}
 
-\item{option_custom_report}{\code{\link[=integer]{integer()}}}
+\item{custom_report_option}{\code{\link[=integer]{integer()}}}
 
 \item{parameter_trace}{\code{\link[=integer]{integer()}}}
 
-\item{option_cumulative_report}{\code{\link[=integer]{integer()}}}
+\item{cumulative_report_option}{\code{\link[=integer]{integer()}}}
 
 \item{use_full_priors}{\code{\link[=integer]{integer()}}}
 
 \item{use_soft_bounds}{\code{\link[=integer]{integer()}}}
 
-\item{option_data_output}{\code{\link[=integer]{integer()}}}
+\item{data_output_option}{\code{\link[=integer]{integer()}}}
 
 \item{phase_maximum}{\code{\link[=integer]{integer()}}}
 
@@ -69,19 +69,19 @@ write_starter(
 
 \item{mcmc_thin}{\code{\link[=integer]{integer()}}}
 
-\item{option_jitter}{\code{\link[=numeric]{numeric()}}}
+\item{jitter_option}{\code{\link[=numeric]{numeric()}}}
 
-\item{year_min_sd_report}{\code{\link[=integer]{integer()}}}
+\item{sd_report_year_min}{\code{\link[=integer]{integer()}}}
 
-\item{year_max_sd_report}{\code{\link[=integer]{integer()}}}
+\item{sd_report_year_max}{\code{\link[=integer]{integer()}}}
 
-\item{years_extra_sd_report}{\code{\link[=integer]{integer()}}}
+\item{sd_report_years_extra}{\code{\link[=integer]{integer()}}}
 
 \item{convergence_value}{\code{\link[=numeric]{numeric()}}}
 
 \item{year_retrospective}{\code{\link[=integer]{integer()}}}
 
-\item{option_age_summary}{\code{\link[=integer]{integer()}}}
+\item{age_summary_option}{\code{\link[=integer]{integer()}}}
 
 \item{depletion_basis}{\code{\link[=integer]{integer()}}}
 

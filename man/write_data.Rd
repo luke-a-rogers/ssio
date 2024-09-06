@@ -113,6 +113,9 @@ write_data(
 
 \item{use_selectivity_data}{\code{\link[=integer]{integer()}}}
 }
+\value{
+\code{\link[=list]{list()}}
+}
 \description{
 Write Stock Synthesis 3.30 Data Input File
 }
