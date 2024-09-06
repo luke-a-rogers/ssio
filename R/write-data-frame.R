@@ -2,7 +2,6 @@
 #'
 #' @param x [data.frame()]
 #' @param file [character()]
-#' @param name [character()]
 #' @param append [logical()]
 #'
 #' @return [data.frame()]
@@ -10,18 +9,21 @@
 #'
 #' @examples
 #' \dontrun{
-#' x <- data.frame(first = 1:10, second = 11:20)
-#' write_data_frame(x = x, file = "temp.ss", name = "data frame")
+#' data_frame <- data.frame(first = 1:10, second = 11:20)
+#' write_data_frame(x = data_frame, file = "temp.ss")
 #' }
 #'
 write_data_frame <- function (x,
 															file,
-															name = "",
 															append = TRUE) {
 
-  # Define ---------------------------------------------------------------------
+	# Name -----------------------------------------------------------------------
 
-	name <- paste("#", name, collapse = c(" "))
+	d <- substitute(x) |> as.character() |> stringr::str_replace_all("_", " ")
+	name <- paste("#", d, sep = " ")
+
+  # Columns --------------------------------------------------------------------
+
 	cols <- paste("#", paste(colnames(x), collapse = c(" ")), sep = c(" "))
 
   # Write ----------------------------------------------------------------------
