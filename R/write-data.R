@@ -119,7 +119,7 @@ write_data <- function (file = "data.ss",
 
 	# Fleet definitions ----------------------------------------------------------
 
-	write_data_frame(fleet_info, file, "fleet info", append = TRUE)
+	write_data_frame(fleet_info, file, append = TRUE)
 
 	# Bycatch fleets -------------------------------------------------------------
 
@@ -127,13 +127,13 @@ write_data <- function (file = "data.ss",
 
 	# Catch ----------------------------------------------------------------------
 
-	write_data_frame(catch_data, file, "catch data", append = TRUE)
+	write_data_frame(catch_data, file, append = TRUE)
 	write_terminal_line(n = ncol(catch_data), file, append = TRUE)
 
   # Indices --------------------------------------------------------------------
 
-	write_data_frame(index_info, file, "index info", append = TRUE)
-	write_data_frame(index_data, file, "index data", append = TRUE)
+	write_data_frame(index_info, file, append = TRUE)
+	write_data_frame(index_data, file, append = TRUE)
 	write_terminal_line(n = ncol(index_data), file, append = TRUE)
 
 	# Discards -------------------------------------------------------------------
@@ -143,9 +143,9 @@ write_data <- function (file = "data.ss",
 
 	if (n_fleets_discard > 0) {
 		# Discard info
-		write_data_frame(discard_info, file, "discard info", append = TRUE)
+		write_data_frame(discard_info, file, append = TRUE)
 		# Discard data
-		write_data_frame(discard_data, file, "discard data", append = TRUE)
+		write_data_frame(discard_data, file, append = TRUE)
 		write_terminal_line(n = ncol(discard_data), file, append = TRUE)
 	}
 
@@ -181,7 +181,7 @@ write_data <- function (file = "data.ss",
 	readr::write_lines(x = x5, file = file, append = TRUE)
 
 	if (use_length_composition > 0) {
-		write_data_frame(length_info, file, name = "length info", append = TRUE)
+		write_data_frame(length_info, file, append = TRUE)
 	}
 	if (use_length_composition == 2L) {
 		write_terminal_line(n = ncol(length_info), file, append = TRUE)
@@ -201,7 +201,7 @@ write_data <- function (file = "data.ss",
 	readr::write_lines(x = x51, file = file, append = TRUE)
 
 	if (use_length_composition > 0) {
-		write_data_frame(length_data, file, name = "length data", append = TRUE)
+		write_data_frame(length_data, file, append = TRUE)
 		write_terminal_line(n = ncol(length_data), file, append = TRUE)
 	}
 
@@ -273,10 +273,9 @@ write_data <- function (file = "data.ss",
 		stop("ssio:write_data(): use_selectivity_data > 0 not implemented")
 	}
 
-  # End of file ----------------------------------------------------------------
+	# End of file ----------------------------------------------------------------
 
-	x13 <- paste(999, " end of file", sep = sep)
-	readr::write_lines(x = x13, file = file, append = TRUE)
+	readr::write_lines(x = 999, file = file, append = TRUE)
 
 	# Return ---------------------------------------------------------------------
 
