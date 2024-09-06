@@ -4,13 +4,7 @@
 \alias{write_terminal_line}
 \title{Write Stock Synthesis 3.30 Data Frame Terminal Line}
 \usage{
-write_terminal_line(
-  n,
-  file,
-  value = -9999,
-  name = "terminal line",
-  append = TRUE
-)
+write_terminal_line(n, file, value = -9999, append = TRUE)
 }
 \arguments{
 \item{n}{\code{\link[=integer]{integer()}}}
@@ -18,8 +12,6 @@ write_terminal_line(
 \item{file}{\code{\link[=character]{character()}}}
 
 \item{value}{\code{\link[=numeric]{numeric()}}}
-
-\item{name}{\code{\link[=character]{character()}}}
 
 \item{append}{\code{\link[=logical]{logical()}}}
 }

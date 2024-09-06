@@ -4,14 +4,12 @@
 \alias{write_data_frame}
 \title{Write Stock Synthesis 3.30 Data Frame}
 \usage{
-write_data_frame(x, file, name = "", append = TRUE)
+write_data_frame(x, file, append = TRUE)
 }
 \arguments{
 \item{x}{\code{\link[=data.frame]{data.frame()}}}
 
 \item{file}{\code{\link[=character]{character()}}}
-
-\item{name}{\code{\link[=character]{character()}}}
 
 \item{append}{\code{\link[=logical]{logical()}}}
 }
@@ -23,8 +21,8 @@ Write Stock Synthesis 3.30 Data Frame
 }
 \examples{
 \dontrun{
-x <- data.frame(first = 1:10, second = 11:20)
-write_data_frame(x = x, file = "temp.ss", name = "data frame")
+data_frame <- data.frame(first = 1:10, second = 11:20)
+write_data_frame(x = data_frame, file = "temp.ss")
 }
 
 }
