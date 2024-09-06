@@ -36,7 +36,7 @@
 #' @param use_morph_composition [integer()]
 #' @param use_selectivity_data [integer()]
 #'
-#' @return NULL
+#' @return [list()]
 #' @export
 #'
 #' @examples
@@ -81,41 +81,24 @@ write_data <- function (file = "data.ss",
 
 	# Define ---------------------------------------------------------------------
 
-	# Separation string
-	sep <- c(" # ")
+	x <- as.list(environment())
 
 	# Comments -------------------------------------------------------------------
 
-	x0 <- c("#C data file written by ssio::write_data()")
-
-	# Write
-	readr::write_lines(x = x0, file = file, append = FALSE)
+	write_comment_line("written by ssio::write_data()", file, append = FALSE)
 
 	# Model dimensions -----------------------------------------------------------
 
-	x1 <- list(
-		# Model dimensions
-		paste(year_start, "year start", sep = sep),
-		paste(year_end, "year end", sep = sep),
-		paste(n_seasons_per_year, "n seasons per year", sep = sep),
-		paste(
-			paste(
-				n_months_per_season,
-				collapse = c(" ")
-			),
-			"n months per season",
-			sep = sep
-		),
-		paste(n_subseasons, "n subseasons", sep = sep),
-		paste(month_spawning, "month spawning", sep = sep),
-		paste(n_sexes, "n sexes", sep = sep),
-		paste(n_ages, "n ages", sep = sep),
-		paste(n_areas, "n areas", sep = sep),
-		paste(n_fleets, "n fleets", sep = sep)
-	)
-
-	# Write
-	readr::write_lines(x = x1, file = file, append = TRUE)
+	write_argument_line(year_start, file, append = TRUE)
+	write_argument_line(year_end, file, append = TRUE)
+	write_argument_line(n_seasons_per_year, file, append = TRUE)
+	write_argument_line(n_months_per_season, file, append = TRUE)
+	write_argument_line(n_subseasons, file, append = TRUE)
+	write_argument_line(month_spawning, file, append = TRUE)
+	write_argument_line(n_sexes, file, append = TRUE)
+	write_argument_line(n_ages, file, append = TRUE)
+	write_argument_line(n_areas, file, append = TRUE)
+	write_argument_line(n_fleets, file, append = TRUE)
 
 	# Fleet definitions ----------------------------------------------------------
 
@@ -138,8 +121,7 @@ write_data <- function (file = "data.ss",
 
 	# Discards -------------------------------------------------------------------
 
-	x2 <- paste(n_fleets_discard, "n fleets discard", sep = sep)
-	readr::write_lines(x = x2, file = file, append = TRUE)
+	write_argument_line(n_fleets_discard, file, append = TRUE)
 
 	if (n_fleets_discard > 0) {
 		# Discard info
@@ -151,34 +133,27 @@ write_data <- function (file = "data.ss",
 
 	# Mean body size -------------------------------------------------------------
 
-	x3 <- paste(use_mean_body_size, "use mean body size", sep = sep)
-	readr::write_lines(x = x3, file = file, append = TRUE)
+	write_argument_line(use_mean_body_size, file, append = TRUE)
 
 	if (use_mean_body_size > 0) {
-		# TBD
-		stop("ssio::write_data(): mean body size not implemented")
+		stop("use_mean_body_size > 0 not implemented")
 	}
 
 	# Population length bins -----------------------------------------------------
 
-	x4 <- paste(length_bin_method, "length bin method", sep = sep)
-	readr::write_lines(x = x4, file = file, append = TRUE)
+	write_argument_line(length_bin_method, file, append = TRUE)
 
 	if (length_bin_method == 2) {
-		x42 <- list(
-			paste(length_bin_width, "length bin width", sep = sep),
-			paste(length_bin_lower_min, "length bin lower min", sep = sep),
-			paste(length_bin_lower_max, "length bin lower max", sep = sep)
-		)
-		readr::write_lines(x = x42, file = file, append = TRUE)
+		write_argument_line(length_bin_width, file, append = TRUE)
+		write_argument_line(length_bin_lower_min, file, append = TRUE)
+		write_argument_line(length_bin_lower_max, file, append = TRUE)
 	} else {
-		stop("ssio::write_data(): use `length_bin_method == 2`")
+		stop("length_bin_method != 2 not implemented")
 	}
 
 	# Length composition ---------------------------------------------------------
 
-	x5 <- paste(use_length_composition, "use length composition", sep = sep)
-	readr::write_lines(x = x5, file = file, append = TRUE)
+	write_argument_line(use_length_composition, file, append = TRUE)
 
 	if (use_length_composition > 0) {
 		write_data_frame(length_info, file, append = TRUE)
@@ -187,32 +162,20 @@ write_data <- function (file = "data.ss",
 		write_terminal_line(n = ncol(length_info), file, append = TRUE)
 	}
 
-	x51 <- list(
-		paste(n_length_bins, "n_length_bins", sep = sep),
-		paste(
-			paste(
-				length_bins_lower,
-				collapse = c(" ")
-			),
-			"length bins lower",
-			sep = sep
-		)
-	)
-	readr::write_lines(x = x51, file = file, append = TRUE)
+	write_argument_line(n_length_bins, file, append = TRUE)
+	write_argument_line(length_bins_lower, file, append = TRUE)
 
 	if (use_length_composition > 0) {
 		write_data_frame(length_data, file, append = TRUE)
 		write_terminal_line(n = ncol(length_data), file, append = TRUE)
 	}
 
-
 	# Age composition ------------------------------------------------------------
 
-	x6 <- paste(n_age_bins, "n age bins", sep = sep)
-	readr::write_lines(x = x6, file = file, append = TRUE)
+	write_argument_line(n_age_bins, file, append = TRUE)
 
 	if (n_age_bins > 0) {
-		stop("ssio::write_data(): n_age_bins > 0 not implemented")
+		stop("n_age_bins > 0 not implemented")
 	}
 
 	# Conditional age-at-length --------------------------------------------------
@@ -221,56 +184,50 @@ write_data <- function (file = "data.ss",
 
 	# Mean size-at-age -----------------------------------------------------------
 
-	x7 <- paste(use_mean_size_at_age, "use mean size at age", sep = sep)
-	readr::write_lines(x = x7, file = file, append = TRUE)
+	write_argument_line(use_mean_size_at_age, file, append = TRUE)
 
 	if (use_mean_size_at_age > 0) {
-		stop("ssio:write_data(): use_mean_size_at_age > 0 not implemented")
+		stop("use_mean_size_at_age > 0 not implemented")
 	}
 
 	# Environmental --------------------------------------------------------------
 
-	x8 <- paste(n_environmental, "n environmental", sep = sep)
-	readr::write_lines(x = x8, file = file, append = TRUE)
+	write_argument_line(n_environmental, file, append = TRUE)
 
 	if (n_environmental > 0) {
-		stop("ssio:write_data(): n_environmental > 0 not implemented")
+		stop("n_environmental > 0 not implemented")
 	}
 
 	# Size composition -----------------------------------------------------------
 
-	x9 <- paste(n_size_frequency_methods, "n size frequency methods", sep = sep)
-	readr::write_lines(x = x9, file = file, append = TRUE)
+	write_argument_line(n_size_frequency_methods, file, append = TRUE)
 
 	if (n_environmental > 0) {
-		stop("ssio:write_data(): n_size_frequency_methods > 0 not implemented")
+		stop("n_size_frequency_methods > 0 not implemented")
 	}
 
 	# Tag recapture --------------------------------------------------------------
 
-	x10 <- paste(use_tag_recapture, "use tag recapture", sep = sep)
-	readr::write_lines(x = x10, file = file, append = TRUE)
+	write_argument_line(use_tag_recapture, file, append = TRUE)
 
-	if (n_environmental > 0) {
-		stop("ssio:write_data(): use_tag_recapture > 0 not implemented")
+	if (use_tag_recapture > 0) {
+		stop("use_tag_recapture > 0 not implemented")
 	}
 
 	# Morph composition ----------------------------------------------------------
 
-	x11 <- paste(use_morph_composition, "use morph composition", sep = sep)
-	readr::write_lines(x = x11, file = file, append = TRUE)
+	write_argument_line(use_morph_composition, file, append = TRUE)
 
-	if (n_environmental > 0) {
-		stop("ssio:write_data(): use_morph_composition > 0 not implemented")
+	if (use_morph_composition > 0) {
+		stop("use_morph_composition > 0 not implemented")
 	}
 
 	# Selectivity ----------------------------------------------------------------
 
-	x12 <- paste(use_selectivity_data, "use selectivity data", sep = sep)
-	readr::write_lines(x = x11, file = file, append = TRUE)
+	write_argument_line(use_selectivity_data, file, append = TRUE)
 
-	if (n_environmental > 0) {
-		stop("ssio:write_data(): use_selectivity_data > 0 not implemented")
+	if (use_selectivity_data > 0) {
+		stop("use_selectivity_data > 0 not implemented")
 	}
 
 	# End of file ----------------------------------------------------------------
@@ -279,6 +236,6 @@ write_data <- function (file = "data.ss",
 
 	# Return ---------------------------------------------------------------------
 
-	return(invisible(NULL))
+	return(invisible(x))
 
 }
