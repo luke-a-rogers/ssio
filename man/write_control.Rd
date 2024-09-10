@@ -54,7 +54,7 @@ write_control(
   selectivity_parameters,
   use_tag_recapture = 0,
   use_selectivity_2d = 0,
-  variance_adjustment_info,
+  variance_info,
   lambda_max_phase,
   lambda_sd_offset,
   lambda_info,
@@ -160,7 +160,7 @@ write_control(
 
 \item{use_selectivity_2d}{\code{\link[=integer]{integer()}}}
 
-\item{variance_adjustment_info}{\code{\link[=data.frame]{data.frame()}}}
+\item{variance_info}{\code{\link[=data.frame]{data.frame()}}}
 
 \item{lambda_max_phase}{\code{\link[=integer]{integer()}}}
 

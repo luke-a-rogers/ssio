@@ -49,7 +49,7 @@
 #' @param selectivity_parameters [data.frame()]
 #' @param use_tag_recapture [integer()]
 #' @param use_selectivity_2d [integer()]
-#' @param variance_adjustment_info [data.frame()]
+#' @param variance_info [data.frame()]
 #' @param lambda_max_phase [integer()]
 #' @param lambda_sd_offset [integer()]
 #' @param lambda_info [data.frame()]
@@ -113,7 +113,7 @@ write_control <- function (file = "control.ss",
 													 selectivity_parameters,
 													 use_tag_recapture = 0,
 													 use_selectivity_2d = 0,
-													 variance_adjustment_info,
+													 variance_info,
 													 lambda_max_phase,
 													 lambda_sd_offset,
 													 lambda_info,
@@ -286,8 +286,8 @@ write_control <- function (file = "control.ss",
 
 	# Variance adjustment --------------------------------------------------------
 
-	write_data_frame(variance_adjustment_info, file, append = TRUE)
-	write_terminal_line(ncol(variance_adjustment_info), file, append = TRUE)
+	write_data_frame(variance_info, file, append = TRUE)
+	write_terminal_line(ncol(variance_info), file, append = TRUE)
 
 	# Emphasis factors -----------------------------------------------------------
 
