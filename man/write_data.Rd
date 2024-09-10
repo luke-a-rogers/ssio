@@ -16,7 +16,7 @@ write_data(
   n_ages,
   n_areas,
   n_fleets,
-  fleet_info,
+  catch_info,
   catch_data,
   index_info,
   index_data,
@@ -65,7 +65,7 @@ write_data(
 
 \item{n_fleets}{\code{\link[=integer]{integer()}}}
 
-\item{fleet_info}{\code{\link[=data.frame]{data.frame()}}}
+\item{catch_info}{\code{\link[=data.frame]{data.frame()}}}
 
 \item{catch_data}{\code{\link[=data.frame]{data.frame()}}}
 

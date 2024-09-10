@@ -11,7 +11,7 @@
 #' @param n_ages [integer()]
 #' @param n_areas [integer()]
 #' @param n_fleets [integer()]
-#' @param fleet_info [data.frame()]
+#' @param catch_info [data.frame()]
 #' @param catch_data [data.frame()]
 #' @param index_info [data.frame()]
 #' @param index_data [data.frame()]
@@ -54,7 +54,7 @@ write_data <- function (file = "data.ss",
 												n_ages,
 												n_areas,
 												n_fleets,
-												fleet_info,
+												catch_info,
 												catch_data,
 												index_info,
 												index_data,
@@ -102,7 +102,7 @@ write_data <- function (file = "data.ss",
 
 	# Fleet definitions ----------------------------------------------------------
 
-	write_data_frame(fleet_info, file, append = TRUE)
+	write_data_frame(catch_info, file, append = TRUE)
 
 	# Bycatch fleets -------------------------------------------------------------
 
