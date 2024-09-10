@@ -23,9 +23,12 @@ write_control(
   growth_age_at_l2,
   growth_exp_decay,
   growth_feature = 0,
+  growth_add_sd = 0,
+  growth_cv_option = 0,
   maturity_option,
   maturity_data,
   maturity_first_age,
+  fecundity_option,
   hermaphroditism_option = 0,
   parameter_offset_method,
   mortality_growth_parameters,
@@ -33,7 +36,7 @@ write_control(
   spawner_recruitment_option,
   spawner_recruitment_parameters,
   use_steepness,
-  spawner_recruitment_feature,
+  spawner_recruitment_feature = 0,
   recruitment_deviation_option = 0,
   recruitment_deviation_year_start,
   recruitment_deviation_year_end,
@@ -95,11 +98,17 @@ write_control(
 
 \item{growth_feature}{\code{\link[=integer]{integer()}}}
 
+\item{growth_add_sd}{\code{\link[=numeric]{numeric()}}}
+
+\item{growth_cv_option}{\code{\link[=integer]{integer()}}}
+
 \item{maturity_option}{\code{\link[=integer]{integer()}}}
 
 \item{maturity_data}{\code{\link[=data.frame]{data.frame()}}}
 
 \item{maturity_first_age}{\code{\link[=numeric]{numeric()}}}
+
+\item{fecundity_option}{\code{\link[=integer]{integer()}}}
 
 \item{hermaphroditism_option}{\code{\link[=integer]{integer()}}}
 
