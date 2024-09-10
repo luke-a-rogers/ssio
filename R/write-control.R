@@ -18,9 +18,12 @@
 #' @param growth_age_at_l2 [numeric()]
 #' @param growth_exp_decay [numeric()]
 #' @param growth_feature [integer()]
+#' @param growth_add_sd [numeric()]
+#' @param growth_cv_option [integer()]
 #' @param maturity_option [integer()]
 #' @param maturity_data [data.frame()]
 #' @param maturity_first_age [numeric()]
+#' @param fecundity_option [integer()]
 #' @param hermaphroditism_option [integer()]
 #' @param parameter_offset_method [integer()]
 #' @param mortality_growth_parameters [data.frame()]
@@ -79,9 +82,12 @@ write_control <- function (file = "control.ss",
 													 growth_age_at_l2,
 													 growth_exp_decay,
 													 growth_feature = 0,
+													 growth_add_sd = 0,
+													 growth_cv_option = 0,
 													 maturity_option,
 													 maturity_data,
 													 maturity_first_age,
+													 fecundity_option,
 													 hermaphroditism_option = 0,
 													 parameter_offset_method,
 													 mortality_growth_parameters,
@@ -89,7 +95,7 @@ write_control <- function (file = "control.ss",
 													 spawner_recruitment_option,
 													 spawner_recruitment_parameters,
 													 use_steepness,
-													 spawner_recruitment_feature,
+													 spawner_recruitment_feature = 0,
 													 recruitment_deviation_option = 0,
 													 recruitment_deviation_year_start,
 													 recruitment_deviation_year_end,
@@ -179,6 +185,9 @@ write_control <- function (file = "control.ss",
 		stop("growth_method > 2 not implemented")
 	}
 
+	write_argument_line(growth_add_sd, file, append = TRUE)
+	write_argument_line(growth_cv_option, file, append = TRUE)
+
 	# Maturity -------------------------------------------------------------------
 
 	write_argument_line(maturity_option, file, append = TRUE)
@@ -190,6 +199,7 @@ write_control <- function (file = "control.ss",
 	}
 
 	write_argument_line(maturity_first_age, file, append = TRUE)
+	write_argument_line(fecundity_option, file, append = TRUE)
 
 	# Hermaphroditism ------------------------------------------------------------
 
@@ -285,7 +295,7 @@ write_control <- function (file = "control.ss",
 	write_argument_line(lambda_sd_offset, file, append = TRUE)
 	# Data frame
 	write_data_frame(lambda_info, file, append = TRUE)
-	write_terminal_line(ncol(lambda_info), file, append = TRUE)
+	write_terminal_line(5L, file, append = TRUE)
 
 	# Variance of derived quantities ---------------------------------------------
 
