@@ -261,7 +261,7 @@ write_control <- function (file = "control.ss",
 	# Catchability ---------------------------------------------------------------
 
 	write_data_frame(catchability_info, file, append = TRUE)
-	write_terminal_line(ncol(catchability_info), file, append = TRUE)
+	write_terminal_line(6L, file, append = TRUE)
 	write_data_frame(catchability_parameters, file, append = TRUE)
 
 	# Selectivity and retention --------------------------------------------------
