@@ -10,9 +10,6 @@ create_p()
 \code{\link[tibble:tibble]{tibble::tibble()}}
 }
 \description{
-Create Stock Synthesis 3.30 Parameter Data Frame
-}
-\details{
 Create a parameter \code{\link[tibble:tibble]{tibble::tibble()}} with 0 rows. Append parameter
 rows using \code{\link[=append_p]{append_p()}} and the pipe operator (see examples).
 }
