@@ -23,7 +23,6 @@ create_catch_info <- function () {
 		area = integer(0),
 		units = integer(0),
 		use_catch_mult = integer(0),
-		# fleet_name = character(0),
 		name = character(0)
 	)
 
@@ -55,7 +54,7 @@ create_index_info <- function () {
 	x <- tibble::tibble(
 		fleet = integer(0),
 		units = integer(0),
-		error = numeric(0),
+		error_type = numeric(0),
 		sd_report = integer(0),
 		name = character(0)
 	)
