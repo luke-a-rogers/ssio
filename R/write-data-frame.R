@@ -33,7 +33,7 @@ write_data_frame <- function (x,
 	# Colnames
 	readr::write_lines(cols, file = file, append = TRUE)
 	# Data frame
-	readr::write_delim(x, file = file, append = TRUE, col_names = FALSE)
+	readr::write_delim(x, file = file, append = TRUE, quote = "none")
 
 	# Return ---------------------------------------------------------------------
 
