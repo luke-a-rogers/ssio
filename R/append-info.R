@@ -27,7 +27,6 @@ append_catch_info <- function (x = NULL,
 															 area = 0,
 															 units = 0,
 															 use_catch_mult = 0,
-															 # fleet_name = 0,
 															 name = c("")) {
 
 	# Define ---------------------------------------------------------------------
@@ -39,8 +38,7 @@ append_catch_info <- function (x = NULL,
 			area = area,
 			units = units,
 			use_catch_mult = use_catch_mult,
-			# fleet_name = fleet_name,
-			name = paste("#", name, sep = c(" "))
+			name = stringr::str_replace_all(name, " ", "_")
 		)
 	)
 
@@ -58,7 +56,7 @@ append_catch_info <- function (x = NULL,
 #' @param x [data.frame()]
 #' @param fleet [integer()]
 #' @param units [integer()]
-#' @param error [numeric()]
+#' @param error_type [numeric()]
 #' @param sd_report [integer()]
 #' @param name [character()]
 #'
@@ -74,7 +72,7 @@ append_catch_info <- function (x = NULL,
 append_index_info <- function (x = NULL,
 															 fleet = 0,
 															 units = 0,
-															 error = 0,
+															 error_type = 0,
 															 sd_report = 0,
 															 name = c("")) {
 
@@ -84,7 +82,7 @@ append_index_info <- function (x = NULL,
 		tibble::tibble(
 			fleet = fleet,
 			units = units,
-			error = error,
+			error_type = error_type,
 			sd_report = sd_report,
 			name = paste("#", name, sep = c(" "))
 		)
