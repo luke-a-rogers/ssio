@@ -8,7 +8,7 @@ append_index_info(
   x = NULL,
   fleet = 0,
   units = 0,
-  error = 0,
+  error_type = 0,
   sd_report = 0,
   name = c("")
 )
@@ -20,7 +20,7 @@ append_index_info(
 
 \item{units}{\code{\link[=integer]{integer()}}}
 
-\item{error}{\code{\link[=numeric]{numeric()}}}
+\item{error_type}{\code{\link[=numeric]{numeric()}}}
 
 \item{sd_report}{\code{\link[=integer]{integer()}}}
 
