@@ -287,7 +287,7 @@ write_control <- function (file = "control.ss",
 	# Variance adjustment --------------------------------------------------------
 
 	write_data_frame(variance_info, file, append = TRUE)
-	write_terminal_line(ncol(variance_info), file, append = TRUE)
+	write_terminal_line(3L, file, append = TRUE)
 
 	# Emphasis factors -----------------------------------------------------------
 
