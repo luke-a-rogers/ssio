@@ -275,3 +275,43 @@ create_lambda_info <- function () {
 
 	return(x)
 }
+
+#' Create Stock Synthesis 3.30 Seasonality Info Data Frame
+#'
+#' @description
+#' Create an info [tibble::tibble()] with 0 rows. Append info
+#' rows using [ssio::append_seasonality_info()] and the pipe operator
+#' (see examples).
+#'
+#' @return [tibble::tibble()]
+#' @export
+#'
+#' @examples
+#' \dontrun{
+#' create_seasonality_info() |>
+#'   append_seasonality_info(name = "seasonality")
+#' }
+#'
+create_seasonality_info <- function () {
+
+	# Define ---------------------------------------------------------------------
+
+	x <- tibble::tibble(
+		wt_len_fem_1 = integer(0),
+		wt_len_fem_2 = integer(0),
+		maturity_1 = integer(0),
+		maturity_2 = integer(0),
+		fecundity_1 = integer(0),
+		fecundity_2 = integer(0),
+		wt_len_mal_1 = integer(0),
+		wt_len_mal_2 = integer(0),
+		l1 = integer(0),
+		von_bert_k = integer(0),
+		name = character(0)
+	)
+
+	# Return ---------------------------------------------------------------------
+
+	return(x)
+
+}
