@@ -219,7 +219,7 @@ write_control <- function (file = "control.ss",
 
 	# Seasonal parameters --------------------------------------------------------
 
-	write_argument_line(seasonality_info, file, append = TRUE)
+	write_data_frame(seasonality_info, file, append = TRUE)
 
 	# Spawner recruitment --------------------------------------------------------
 
