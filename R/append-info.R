@@ -370,3 +370,68 @@ append_lambda_info <- function (x = NULL,
 
 	return(x)
 }
+
+
+#' Append Stock Synthesis 3.30 Seasonality Info
+#'
+#' @description
+#' Append an info row to an info [tibble::tibble()] created by
+#' [ssio::create_seasonality_info()] (see examples).
+#'
+#' @param x [data.frame()]
+#' @param wt_len_fem_1 [integer()]
+#' @param wt_len_fem_2 [integer()]
+#' @param maturity_1 [integer()]
+#' @param maturity_2 [integer()]
+#' @param fecundity_1 [integer()]
+#' @param fecundity_2 [integer()]
+#' @param wt_len_mal_1 [integer()]
+#' @param wt_len_mal_2 [integer()]
+#' @param l1 [integer()]
+#' @param von_bert_k [integer()]
+#' @param name [character()]
+#'
+#' @return [tibble::tibble()]
+#' @export
+#'
+#' @examples
+#' \dontrun{
+#' create_seasonality_info() |>
+#'   append_seasonality_info(name = "seasonality")
+#' }
+#'
+append_seasonality_info <- function (x = NULL,
+																		 wt_len_fem_1 = 0,
+																		 wt_len_fem_2 = 0,
+																		 maturity_1 = 0,
+																		 maturity_2 = 0,
+																		 fecundity_1 = 0,
+																		 fecundity_2 = 0,
+																		 wt_len_mal_1 = 0,
+																		 wt_len_mal_2 = 0,
+																		 l1 = 0,
+																		 von_bert_k = 0,
+																		 name = c("")) {
+
+	# Define ---------------------------------------------------------------------
+
+	x <- x |> dplyr::bind_rows(
+		tibble::tibble(
+			wt_len_fem_1 = wt_len_fem_1,
+			wt_len_fem_2 = wt_len_fem_2,
+			maturity_1 = maturity_1,
+			maturity_2 = maturity_2,
+			fecundity_1 = fecundity_1,
+			fecundity_2 = fecundity_2,
+			wt_len_mal_1 = wt_len_mal_1,
+			wt_len_mal_2 = wt_len_mal_2,
+			l1 = l1,
+			von_bert_k = von_bert_k,
+			name = paste("#", name, sep = c(" "))
+		)
+	)
+
+	# Return ---------------------------------------------------------------------
+
+	return(x)
+}
