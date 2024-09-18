@@ -32,7 +32,7 @@ write_control(
   hermaphroditism_option = 0,
   parameter_offset_method,
   mortality_growth_parameters,
-  seasonal_parameters,
+  seasonality_info,
   spawner_recruitment_option,
   spawner_recruitment_parameters,
   use_steepness,
@@ -116,7 +116,7 @@ write_control(
 
 \item{mortality_growth_parameters}{\code{\link[=data.frame]{data.frame()}}}
 
-\item{seasonal_parameters}{\code{\link[=data.frame]{data.frame()}}}
+\item{seasonality_info}{\code{\link[=data.frame]{data.frame()}}}
 
 \item{spawner_recruitment_option}{\code{\link[=integer]{integer()}}}
 
