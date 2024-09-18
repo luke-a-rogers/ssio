@@ -27,7 +27,7 @@
 #' @param hermaphroditism_option [integer()]
 #' @param parameter_offset_method [integer()]
 #' @param mortality_growth_parameters [data.frame()]
-#' @param seasonal_parameters [data.frame()]
+#' @param seasonality_info [data.frame()]
 #' @param spawner_recruitment_option [integer()]
 #' @param spawner_recruitment_parameters [data.frame()]
 #' @param use_steepness [integer()]
@@ -91,7 +91,7 @@ write_control <- function (file = "control.ss",
 													 hermaphroditism_option = 0,
 													 parameter_offset_method,
 													 mortality_growth_parameters,
-													 seasonal_parameters,
+													 seasonality_info,
 													 spawner_recruitment_option,
 													 spawner_recruitment_parameters,
 													 use_steepness,
@@ -219,7 +219,7 @@ write_control <- function (file = "control.ss",
 
 	# Seasonal parameters --------------------------------------------------------
 
-	write_argument_line(seasonal_parameters, file, append = TRUE)
+	write_argument_line(seasonality_info, file, append = TRUE)
 
 	# Spawner recruitment --------------------------------------------------------
 
