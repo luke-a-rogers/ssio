@@ -35,7 +35,7 @@ write_starter(
   mcmc_detail = 2,
   alk_tolerance = 0,
   boot_seed = 0,
-  check_value = 3.3
+  check_value = "3.30"
 )
 }
 \arguments{
@@ -99,7 +99,7 @@ write_starter(
 
 \item{boot_seed}{\code{\link[=numeric]{numeric()}}}
 
-\item{check_value}{\code{\link[=integer]{integer()}}}
+\item{check_value}{\code{\link[=character]{character()}}}
 }
 \value{
 \code{\link[=list]{list()}}

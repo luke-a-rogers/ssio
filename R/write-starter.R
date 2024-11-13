@@ -30,7 +30,7 @@
 #' @param mcmc_detail [integer()]
 #' @param alk_tolerance [integer()]
 #' @param boot_seed [numeric()]
-#' @param check_value [integer()]
+#' @param check_value [character()]
 #'
 #' @return [list()]
 #' @export
@@ -70,7 +70,7 @@ write_starter <- function (file = "starter.ss",
 													 mcmc_detail = 2,
 													 alk_tolerance = 0,
 													 boot_seed  = 0,
-													 check_value = 3.30) {
+													 check_value = "3.30") {
 
 	# Define ---------------------------------------------------------------------
 
